@@ -44,14 +44,14 @@ public class Ram {
         return this.molduras.indexOf(page);
     }
     
-    public int leastAcessed() {
-        Page page = this.molduras
-                .stream()
-                .min(Comparator.comparing(Page::getUltimoAcesso))
-                .orElse(null);
+    // public int leastAcessed() {
+    //     Page page = this.molduras
+    //             .stream()
+    //             .max(Comparator.comparing(Page::getMaxDistance))
+    //             .orElse(null);
 
-        return this.molduras.indexOf(page);
-    }
+    //     return this.molduras.indexOf(page);
+    // }
     
     public void showMoldura() {
         List<Integer> pageIdsMoldura = new ArrayList<>();
@@ -65,5 +65,30 @@ public class Ram {
 
     public int getTamanhoMoldura() {
         return this.qntMolduras;
+    }
+
+    public int getMaisTempoSemAcesso(List<Integer> sequencia) {
+        int cont = 0;
+        int maxDistance = 0;
+        Page maisTempo = this.molduras.get(0);
+
+        for(Page page : this.molduras) {
+            for (int id : sequencia) {
+                    cont++;
+
+                    if(page.getId() == id) {
+                        break;
+                    }
+            }
+
+            if(maxDistance < cont) {
+                maxDistance = cont;
+                maisTempo = page;
+            }
+
+            cont = 0;
+        }
+
+        return this.molduras.indexOf(maisTempo);
     }
 }

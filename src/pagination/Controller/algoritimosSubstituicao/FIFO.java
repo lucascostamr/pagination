@@ -23,6 +23,8 @@ public class FIFO extends Base{
      */
     public FIFO(List<Integer> sequencia, List<Page> pages, Ram ram) {
         super(sequencia, pages, ram);
+        
+        this.init();
     }
     
     @Override

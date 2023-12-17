@@ -32,14 +32,12 @@ public class Base {
         this.ram = ram;
         this.molduras = ram.getMolduras();
         this.faltas = 0;
-
-        this.init();
     }
 
     /**
      * Preenche a memoria com as primeiras paginas
      */
-    private void init() {
+    protected void init() {
         for (int i = 0; i < this.ram.getTamanhoMoldura(); i++) {
             Page page = this.pages.get(i);
 
@@ -73,7 +71,7 @@ public class Base {
      * @return TRUE se a pagina estiver em memoria; FALSE se a pagina nao estiver na
      *         memoria
      */
-    private boolean check(int id) {
+    protected boolean check(int id) {
         for (int i = 0; i < this.ram.getTamanhoMoldura(); i++) {
             Page page = this.molduras.get(i);
 

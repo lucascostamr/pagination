@@ -31,7 +31,7 @@ public class CadeiaReferencia {
             this.sequenceNormalized.add(id);
         }
     }
-
+    
     public List<Integer> getSequenceNormalized() {
         return this.sequenceNormalized;
     }

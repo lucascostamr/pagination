@@ -49,10 +49,10 @@ public class Pagination {
             pages.add(new Page(i));
         }
 
-//        fifo = new FIFO(referencia.getSequenceNormalized(), pages, ram);
-        otimo = new Otimo(referencia.getSequenceNormalized(), pages, ram);
+    //    fifo = new FIFO(referencia.getSequenceNormalized(), pages, ram);
+    //    fifo.start();
 
-//        fifo.start();
+        otimo = new Otimo(referencia.getSequenceNormalized(), pages, ram);
         otimo.start();
     }
     

@@ -62,7 +62,7 @@ public class Page {
         this.tempoMemoria = tempoAtual - this.idade;
         return this.tempoMemoria;
     }
-
+    
     public static void setTempoAtual(long tempo) {
         tempoAtual = tempo;
         return;

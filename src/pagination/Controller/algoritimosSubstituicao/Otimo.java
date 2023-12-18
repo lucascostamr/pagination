@@ -19,9 +19,9 @@ public class Otimo extends Base {
     public Otimo(List<Integer> sequencia, List<Page> pages, Ram ram) {
         super(sequencia, pages, ram);
         
-        this.distanceToAcess = new ArrayList<>(sequencia);
-
         this.init();
+        
+        this.distanceToAcess = new ArrayList<>(sequencia);
     }
     
     @Override
@@ -34,12 +34,12 @@ public class Otimo extends Base {
             Page page = this.molduras.get(i);
 
             if (page.getId() == id) {
-                System.out.println("\nContem: " + id);
+                this.containMessage(id);
                 page.getAccess();
                 return true;
             }
         }
-        System.out.println("\nNao contem: " + id);
+        this.notContainMessage(id);
 
         
         return false;

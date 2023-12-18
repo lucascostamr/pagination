@@ -45,6 +45,9 @@ public class Base {
             page.setIdade(System.nanoTime());
             this.faltas++;
             this.molduras.add(i, page);
+            this.sequencia.remove(0);
+            this.notContainMessage(page.getId());
+            this.ram.showMoldura();
         }
 
         this.ram.setMolduras(this.molduras);
@@ -76,12 +79,12 @@ public class Base {
             Page page = this.molduras.get(i);
 
             if (page.getId() == id) {
-                System.out.println("\nContem: " + id);
+                this.containMessage(id);
                 page.getAccess();
                 return true;
             }
         }
-        System.out.println("\nNao contem: " + id);
+        this.notContainMessage(id);
 
         return false;
     }
@@ -111,5 +114,13 @@ public class Base {
      */
     private void showFaltas() {
         System.out.println("\nTotal de Faltas: " + this.faltas);
+    }
+
+    protected void containMessage(int id) {
+        System.out.println("\nContem: " + id);
+    }
+
+    protected void notContainMessage(int id) {
+        System.out.println("\nNao contem: " + id);
     }
 }

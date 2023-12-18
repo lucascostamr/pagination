@@ -5,6 +5,13 @@ import pagination.Controller.Page;
 import pagination.Controller.Ram;
 
 public class LRU extends Base {
+    /**
+     * Algoritimo de Substituicao LRU(Least Recently Used)
+     *
+     * @param sequencia sequecia de acessos a paginas na memoria
+     * @param pages     paginas a serem carregadas na memoria
+     * @param ram       memoria a ser carregada
+     */
     public LRU(List<Integer> sequencia, List<Page> pages, Ram ram) {
         super(sequencia, pages, ram);
 

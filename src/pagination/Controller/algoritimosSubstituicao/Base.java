@@ -20,7 +20,7 @@ public class Base {
     protected Ram ram;
 
     /**
-     * Algoritimo de Substituicao FIFO(First In, First Out)
+     * Classe utilizada para comparar e aplicar a paginacao na memoria
      *
      * @param sequencia sequecia de acessos a paginas na memoria
      * @param pages     paginas a serem carregadas na memoria
@@ -54,7 +54,7 @@ public class Base {
     }
 
     /**
-     * Metodo que inicia o algoritimo FIFO
+     * Metodo que inicia metodos de checagem, mudanca e mostra numero de faltas
      */
     public void start() {
         for (int id : this.sequencia) {
@@ -90,8 +90,8 @@ public class Base {
     }
 
     /**
-     * Realiza a troca da pagina mais antiga pela pagina que precisa ser carregada
-     * na memoria
+     * Realiza a troca da pagina de acordo com o algoritimo de substituicao escolhido
+     * 
      *
      * @param id ID da pagina a ser carregada na memoria
      */
@@ -116,10 +116,18 @@ public class Base {
         System.out.println("\nTotal de Faltas: " + this.faltas);
     }
 
+    /**
+     * Imprime na tela uma mensagem caso a pagina esteja presente na memoria
+     * @param id ID da Pagina
+     */
     protected void containMessage(int id) {
         System.out.println("\nContem: " + id);
     }
 
+    /**
+     * Imprime na tela uma mensagem caso a pagina nao esteja presente na memoria
+     * @param id ID da Pagina
+     */
     protected void notContainMessage(int id) {
         System.out.println("\nNao contem: " + id);
     }

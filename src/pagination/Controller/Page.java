@@ -12,8 +12,6 @@ public class Page {
     private static long tempoAtual;
     private int id;
     private int qntAcesso = 0;
-    private int prioridade;
-    private int conteudo;
     private long idade;
     private long ultimoAcesso;
     private long tempoMemoria;
@@ -21,14 +19,11 @@ public class Page {
     public Page(int id, int prioridade, int conteudo) {
         this.id = id;
         this.ultimoAcesso = System.nanoTime();
-        this.prioridade = prioridade;
-        this.conteudo = conteudo;
     }
 
     public Page(int id, int prioridade) {
         this.id = id;
         this.ultimoAcesso = System.nanoTime();
-        this.prioridade = prioridade;
     }
 
     public Page(int id) {

@@ -16,6 +16,13 @@ import pagination.Controller.Ram;
 public class Otimo extends Base {
     private List<Integer> distanceToAcess;
 
+    /**
+     * Algoritimo de Substituicao OPT(Otimo)
+     *
+     * @param sequencia sequecia de acessos a paginas na memoria
+     * @param pages     paginas a serem carregadas na memoria
+     * @param ram       memoria a ser carregada
+     */
     public Otimo(List<Integer> sequencia, List<Page> pages, Ram ram) {
         super(sequencia, pages, ram);
         

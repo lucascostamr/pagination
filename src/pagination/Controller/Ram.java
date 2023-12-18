@@ -44,14 +44,14 @@ public class Ram {
         return this.molduras.indexOf(page);
     }
     
-    // public int leastAcessed() {
-    //     Page page = this.molduras
-    //             .stream()
-    //             .max(Comparator.comparing(Page::getMaxDistance))
-    //             .orElse(null);
+    public int leastAcessed() {
+        Page page = this.molduras
+                .stream()
+                .min(Comparator.comparing(Page::getUltimoAcesso))
+                .orElse(null);
 
-    //     return this.molduras.indexOf(page);
-    // }
+        return this.molduras.indexOf(page);
+    }
     
     public void showMoldura() {
         List<Integer> pageIdsMoldura = new ArrayList<>();

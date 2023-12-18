@@ -52,10 +52,10 @@ public class Otimo extends Base {
                 this.faltas++;
                 page.getAccess();
                 page.setIdade(System.nanoTime());
-                this.molduras.set(ram.getMaisTempoSemAcesso(this.distanceToAcess), page);                
+                this.molduras.set(this.ram.getMaisTempoSemAcesso(this.distanceToAcess), page);                
                 break;
             }
         }
-        ram.setMolduras(this.molduras);
+        this.ram.setMolduras(this.molduras);
     }
 }

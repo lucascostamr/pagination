@@ -31,14 +31,22 @@ public class Pagination {
     private static boolean running = true;
     private static boolean changeInput = false;
     private static boolean sameInput = false;
+    private static boolean changeMoldura = false;
 
     private static void setInputs() {
+        setSequencia();
+        setMoldura();
+        setAlgorithm();
+    }
+
+    private static void setSequencia() {
         System.out.println("Digite a sequecia: ");
         sequencia = input.next();
+    }
+
+    private static void setMoldura() {
         System.out.println("\nDigite o tamanho da moldura: ");
         molduras = input.nextInt();
-        
-        setAlgorithm();
     }
 
     private static void setAlgorithm() {
@@ -52,14 +60,16 @@ public class Pagination {
 
     private static void again() {
         int answer;
-        System.out.println("\n 1 (Mudar input); 2 (Manter input); 3 (Finalizar)");
+        System.out.println("\n 1 (Mudar input); 2 (Manter input); 3 (Mudar moldura); 4 (Finalizar)");
         answer = input.nextInt();
 
         if(answer == 1) {
             changeInput = true;
         } else if (answer == 2) {
             sameInput = true;
-        } else if (answer == 3) {
+        } else if(answer == 3) {
+            changeMoldura = true;
+        } else if (answer == 4) {
             running = false;
         } else {
             badInput();
@@ -102,12 +112,16 @@ public class Pagination {
                 setInputs();
                 init();
                 changeInput = false;
+            } else if (changeMoldura) {
+                setMoldura();
+                init();
+                changeMoldura = false;
             } else if(sameInput) {
                 setAlgorithm();
                 init();
                 sameInput = false;
             }
-            
+
             chooseAlgorithm();
 
             again();

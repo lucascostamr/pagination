@@ -39,6 +39,8 @@ public class Base {
      */
     protected void init() {
         for (int i = 0; i < this.ram.getTamanhoMoldura(); i++) {
+            if(this.pages.size() == i) return;
+
             Page page = this.pages.get(i);
 
             page.getAccess();
@@ -91,7 +93,7 @@ public class Base {
 
     /**
      * Realiza a troca da pagina de acordo com o algoritimo de substituicao escolhido
-     * 
+     *
      *
      * @param id ID da pagina a ser carregada na memoria
      */

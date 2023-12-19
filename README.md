@@ -12,5 +12,5 @@
   <li>13579246802468135790</li>
   <li>98769876987698769876</li>
 <ul>
-<br>
+<div></div>
 ![image](https://github.com/DreaMagici4n/pagination/assets/102836495/40419c96-22ad-40b5-a05a-caf7d273eb71)

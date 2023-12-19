@@ -1,9 +1,3 @@
-<style>
-  div {
-    padding: 1rem;
-  }
-</style>
-
 <h1>Pagination</h1>
 
 <p>This project aims at simulate how the Pagination Algorithms works collectively with the MMU System.</p>

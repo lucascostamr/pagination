@@ -13,6 +13,6 @@
   <li>98769876987698769876</li>
 <ul>
 
-<div style="padding: 1rem">
+<div style="{padding: 1rem}">
   <img src="https://github.com/DreaMagici4n/pagination/assets/102836495/40419c96-22ad-40b5-a05a-caf7d273eb71">
 </div>

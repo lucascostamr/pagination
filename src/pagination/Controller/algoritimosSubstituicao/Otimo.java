@@ -54,12 +54,17 @@ public class Otimo extends Base {
 
     @Override
     protected void change(int id) {
+        int maisTempoSemAcesso = this.ram.getMaisTempoSemAcesso(this.distanceToAcess);
+
+        this.removeMessage(this.molduras.get(maisTempoSemAcesso).getId());
+
         for (Page page : this.pages) {
             if (page.getId() == id) {
                 this.faltas++;
                 page.getAccess();
                 page.setIdade(System.nanoTime());
-                this.molduras.set(this.ram.getMaisTempoSemAcesso(this.distanceToAcess), page);                
+                this.molduras.set(maisTempoSemAcesso, page);
+                this.addMessage(page.getId());         
                 break;
             }
         }

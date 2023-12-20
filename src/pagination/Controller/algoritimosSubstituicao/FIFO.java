@@ -29,16 +29,23 @@ public class FIFO extends Base{
     
     @Override
     protected void change(int id) {
+        int olderPosition = ram.getOlderPosition();
+
+        this.removeMessage(this.molduras.get(olderPosition).getId());
+
         for (Page page : this.pages) {
             if (page.getId() == id) {
                 this.faltas++;
                 page.getAccess();
                 page.setIdade(System.nanoTime());
-                this.molduras.set(ram.getOlderPosition(), page);
+                this.molduras.set(olderPosition, page);
+
+                this.addMessage(page.getId());
                 break;
             }
         }
         ram.setMolduras(this.molduras);
+
     }
 }
    

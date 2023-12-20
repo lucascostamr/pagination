@@ -20,12 +20,17 @@ public class LRU extends Base {
 
     @Override
     protected void change(int id) {
+        int leastAcessed = this.ram.leastAcessed();
+
+        this.removeMessage(this.molduras.get(leastAcessed).getId());
+
         for (Page page : this.pages) {
             if (page.getId() == id) {
                 this.faltas++;
                 page.getAccess();
                 page.setIdade(System.nanoTime());
-                this.molduras.set(this.ram.leastAcessed(), page);
+                this.molduras.set(leastAcessed, page);
+                this.addMessage(page.getId());
                 break;
             }
         }

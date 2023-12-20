@@ -47,6 +47,9 @@ public class Base {
             this.molduras.add(i, page);
             this.sequencia.remove(0);
             this.notContainMessage(page.getId());
+            this.interruptMessage();
+            this.addMessage(page.getId());
+
             this.ram.showMoldura();
         }
 
@@ -59,6 +62,7 @@ public class Base {
     public void start() {
         for (int id : this.sequencia) {
             if (!this.check(id)) {
+                this.interruptMessage();
                 this.change(id);
             }
             ram.showMoldura();
@@ -130,5 +134,17 @@ public class Base {
      */
     protected void notContainMessage(int id) {
         System.out.println("\nNao contem: " + id);
+    }
+
+    protected void addMessage(int id) {
+        System.out.println("Pagina " + id + " adicionada!");
+    }
+
+    protected void removeMessage(int id) {
+        System.out.println("Pagina " + id + " removida!");
+    }
+
+    protected void interruptMessage() {
+        System.out.println("Interrompido!");
     }
 }
